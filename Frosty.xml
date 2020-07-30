@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<scene>
+  <mesh>
+    <name>cone.obj</name>
+    <data>
+      <file>data/meshes/cone.obj</file>
+    </data>
+  </mesh>
+  <texture>
+	<name>Face</name>
+	<data>
+		<file>data/textures/SFace.png</file>
+	</data>
+	</texture>
+  <material>
+     <name>SFaceSmall</name>
+ 	 <data>
+    	<type>Lambertian</type>
+    	<diffuse>
+			<texture>Face</texture>
+		</diffuse>
+	</data>
+  </material>
+  <material>
+    <name>CT</name>
+    <data>
+      <type>CookTorrance</type>
+      <diffuse>
+        <color>100 120 200 255</color>
+      </diffuse>
+    </data>
+  </material>
+  <material>
+    <name>SnowmanFace</name>
+    <data>
+      <type>Ambient</type>
+      <diffuse>
+        <texture>SnowmanFace.png</texture>
+      </diffuse>
+    </data>
+  </material>
+  <material>
+    <name>CB</name>
+    <data>
+      <type>CookTorrance</type>
+      <diffuse>
+        <color>101 67 33 255</color>
+      </diffuse>
+    </data>
+  </material>
+  <material>
+    <name>CBOrange</name>
+    <data>
+      <type>CookTorrance</type>
+      <diffuse>
+        <color>255 165 0 255</color>
+      </diffuse>
+    </data>
+  </material>
+  <material>
+    <name>CBRed</name>
+    <data>
+      <type>CookTorrance</type>
+      <diffuse>
+        <color>255 0 0 255</color>
+      </diffuse>
+    </data>
+  </material>
+  <material>
+    <name>Lambertian</name>
+    <data>
+      <type>Lambertian</type>
+      <diffuse>
+        <color>255 255 255 255</color>
+      </diffuse>
+    </data>
+  </material>
+  <texture>
+	<name>TableCloth</name>
+	<data>
+		<file>data/textures/Tablecloth.png</file>
+	</data>
+	</texture>
+   <material>
+     <name>TC</name>
+	 <data>
+	    <type>CookTorrance</type>
+	    <diffuse>
+		<texture>TableCloth</texture>
+		</diffuse>
+	</data>
+  </material>
+  
+   <texture>
+	<name>Tree</name>
+	<data>
+		<file>data/textures/TreeBark.jpg</file>
+	</data>
+	</texture>
+   <material>
+     <name>Arms</name>
+	 <data>
+	    <type>Lambertian</type>
+	    <diffuse>
+		<texture>Tree</texture>
+		</diffuse>
+	</data>
+  </material>
+  
+  <texture>
+	<name>Snow</name>
+	<data>
+		<file>data/textures/snow.png</file>
+	</data>
+	</texture>
+   <material>
+     <name>Snow</name>
+	 <data>
+	    <type>Lambertian</type>
+	    <diffuse>
+		<texture>Snow</texture>
+		</diffuse>
+	</data>
+  </material>
+  
+   <texture>
+	<name>Carrot</name>
+	<data>
+		<file>data/textures/carrot.jpg</file>
+	</data>
+	</texture>
+   <material>
+     <name>Nose</name>
+	 <data>
+	    <type>Lambertian</type>
+	    <diffuse>
+		<texture>Carrot</texture>
+		</diffuse>
+	</data>
+  </material>
+  
+  <object>
+    <name>Point1</name>
+    <data type="common.SceneLight">
+      <matrix>1.0 0.0 0.0 0.0  0.0 1.0 0.0 0.0  0.0 0.0 1.0 0.0  10.0 10.0 10.0 1.0</matrix>
+      <intensity>100 100 100</intensity>
+      <isAmbient>False</isAmbient>
+      <parent>World</parent>
+    </data>
+  </object>
+  <object>
+    <name>Point2</name>
+    <data type="common.SceneLight">
+      <matrix>1.0 0.0 0.0 0.0  0.0 1.0 0.0 0.0  0.0 0.0 1.0 0.0  -10.0 2.0 -10.0 1.0</matrix>
+      <intensity>70 70 70</intensity>
+      <isAmbient>False</isAmbient>
+      <parent>World</parent>
+    </data>
+  </object>
+  <object>
+    <name>AmbLight</name>
+    <data type="common.SceneLight">
+      <intensity>0.2 0.2 0.2</intensity>
+      <isAmbient>True</isAmbient>
+      <parent>World</parent>
+    </data>
+  </object>
+  <object>
+    <name>MiddleSphere</name>
+    <data>
+      <matrix>0.9998612 0.0 0.0 0.0 0.0 0.9998612 0.0 0.0 0.0 0.0 1.0 0.0 0.0 2.80781 0.0 1.0</matrix>
+      <parent>World</parent>
+      <mesh>Sphere</mesh>
+      <material>Snow</material>
+      <rotateX>-180 180</rotateX>
+      <rotateY>-180 180</rotateY>
+      <enableScale>1 1 1</enableScale>
+      <enableTranslate>1 1 1</enableTranslate>
+      <enableScale>1 1 1</enableScale>
+      <enableTranslate>1 1 1</enableTranslate>
+    </data>
+  </object>
+  <object>
+    <name>HipJoint</name>
+    <data>
+      <matrix>0.5 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0 0.5 0.0 0.0 -1.0 0.0 1.0</matrix>
+      <parent>MiddleSphere</parent>
+      <mesh>Sphere</mesh>
+      <material>Lambertian</material>
+    </data>
+  </object>
+  <object>
+    <name>BottomSphere</name>
+    <data>
+      <matrix>2.5 0.0 0.0 0.0 0.0 2.25 0.0 0.0 0.0 0.0 2.5 0.0 0.0 -0.75 0.0 1.0</matrix>
+      <parent>HipJoint</parent>
+      <mesh>Sphere</mesh>
+      <material>Snow</material>
+      <rotateX>-90.0 70.0</rotateX>
+    </data>
+  </object>
+  <object>
+    <name>LLeg</name>
+    <data>
+      <matrix>0.3 0.0 0.0 0.0 0.0 0.2 0.0 0.0 0.0 0.0 0.4 0.0 0.3 -1.0 0.0 1.0</matrix>
+      <parent>BottomSphere</parent>
+      <mesh>Cylinder</mesh>
+      <material>Snow</material>
+      <rotateX>-90.0 70.0</rotateX>
+    </data>
+  </object>
+  <object>
+    <name>RLeg</name>
+    <data>
+      <matrix>0.3 0.0 0.0 0.0 0.0 0.2 0.0 0.0 0.0 0.0 0.4 0.0 -0.3 -1.0 0.0 1.0</matrix>
+      <parent>BottomSphere</parent>
+      <mesh>Cylinder</mesh>
+      <material>Snow</material>
+      <rotateX>-90.0 70.0</rotateX>
+    </data>
+  </object>
+  <object>
+    <name>Head</name>
+    <data>
+      <matrix>0.75 0.0 0.0 0.0 0.0 0.75 0.0 0.0 0.0 0.0 0.75 0.0 0.0 1.25 0.0 1.0</matrix>
+      <parent>MiddleSphere</parent>
+      <mesh>Sphere</mesh>
+      <material>SFaceSmall</material>
+    </data>
+  </object>
+  <object>
+    <name>Nose</name>
+    <data>
+      <matrix>0.3 0.0 0.0 0.0 0.0 -0.4 1.5 0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.5 1.0</matrix>
+      <parent>Head</parent>
+      <mesh>cone.obj</mesh>
+      <material>Nose</material>
+      <rotateX>-180.0 180.0</rotateX>
+      <enableScale>1 1 1</enableScale>
+    </data>
+  </object>
+  <object>
+    <name>TopHatBottom</name>
+    <data>
+      <matrix>1.0 0.0 0.0 0.0 0.0 0.15 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.75 0.0 1.0</matrix>
+      <parent>Head</parent>
+      <mesh>Cylinder</mesh>
+      <material>CBRed</material>
+      <rotateY>-180.0 180.0</rotateY>
+      <enableScale>1 1 1</enableScale>
+    </data>
+  </object> 
+  <object>
+    <name>TopHatTop</name>
+    <data>
+      <matrix>0.75 0.0 0.0 0.0 0.0 5.0 0.0 0.0 0.0 0.0 0.75 0.0 0.0 1.85 0.0 1.0</matrix>
+      <parent>TopHatBottom</parent>
+      <mesh>Cylinder</mesh>
+      <material>TC</material>
+      <rotateY>-180.0 180.0</rotateY>
+      <enableScale>1 1 1</enableScale>
+    </data>
+  </object> 
+ <object>
+    <name>RArm</name>
+    <data>
+      <matrix>0.10 0.0 0.0 0.0 0.0 0.15 -0.7 0.0 0.0 0.0 0.25 0.0 -1.0 0.25 0.85 1.0</matrix>
+      <parent>MiddleSphere</parent>
+      <mesh>Cylinder</mesh>
+      <material>Arms</material>
+      <rotateX>-180.0 90.0</rotateX>
+      <rotateY>-180.0 90.0</rotateY>
+    </data>
+  </object>
+  <object>
+    <name>LArm</name>
+    <data>
+      <matrix>0.10 0.0 0.0 0.0 0.0 0.15 -0.7 0.0 0.0 0.0 0.25 0.0 1.0 0.25 0.85 1.0</matrix>
+      <parent>MiddleSphere</parent>
+      <mesh>Cylinder</mesh>
+      <material>Arms</material>/material>
+      <rotateX>-180.0 90.0</rotateX>
+      <rotateY>-180.0 90.0</rotateY>
+    </data>
+  </object>
+ <object>
+    <name>LElbowJoint</name>
+    <data>
+      <matrix>1.0 0.0 0.0 0.0 0.0 0.15 0.0 0.0 0.0 0.0 0.5 0.0 0.0 -1.0 1.25 1.0</matrix>
+      <parent>LArm</parent>
+      <mesh>Sphere</mesh>
+      <material>Arms</material>
+    </data>
+  </object> 
+  <object>
+    <name>LForearm</name>
+    <data>
+      <matrix>1.0 0.0 0.0 0.0 0.0 3.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 -1.75 2.0 1.0</matrix>
+      <parent>LElbowJoint</parent>
+      <mesh>Cylinder</mesh>
+      <material>Arms</material>
+      <rotateX>-90.0 0.0</rotateX>
+    </data>
+  </object>
+  <object>
+    <name>RElbowJoint</name>
+    <data>
+      <matrix>1.0 0.0 0.0 0.0 0.0 0.15 0.0 0.0 0.0 0.0 0.5 0.0 0.0 -1.0 1.25 1.0</matrix>
+      <parent>RArm</parent>
+      <mesh>Sphere</mesh>
+      <material>Arms</material>
+    </data>
+  </object>
+  <object>
+    <name>RForearm</name>
+    <data>
+      <matrix>1.0 0.0 0.0 0.0 0.0 3.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 -1.75 2.0 1.0</matrix>
+      <parent>RElbowJoint</parent>
+      <mesh>Cylinder</mesh>
+      <material>Arms</material>
+      <rotateX>-90.0 0.0</rotateX>
+    </data>
+  </object> 
+  <object>
+    <name>Camera1</name>
+    <data type="common.SceneCamera">
+      <matrix>0.9340311 -9.780144E-5 -0.35719225 0.0 -0.10915293 0.95208615 -0.28568676 0.0 0.34010646 0.3058289 0.88926697 0.0 2.9667344 7.207859 5.917903 1.0</matrix>
+      <parent>World</parent>
+      <zPlanes>0.01 1000.0</zPlanes>
+      <perspective>0.02 0.02</perspective>
+    </data>
+  </object>
+</scene>
